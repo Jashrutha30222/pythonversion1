@@ -6,15 +6,17 @@
 trigger:
   - main
 
+# Use a self-hosted agent pool instead of a hosted one
 pool:
-  vmImage: 'ubuntu-latest'
+  name: SelfHostedAgent  # Change this to your self-hosted agent pool name
 
 steps:
+  # Ensure Python 3.x is used
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '3.x'
 
+  # Run your Python script
   - script: |
-      python add.py
+      python add.py  # Ensure 'add.py' exists and is correct
     displayName: 'Run Python Script'
-
