@@ -1,22 +1,15 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
   - main
 
-# Use a self-hosted agent pool instead of a hosted one
+# Use your self-hosted agent named JASHRUTHA
 pool:
-  name: SelfHostedAgent  # Change this to your self-hosted agent pool name
+  name: JASHRUTHA  # Use your self-hosted agent's pool name
 
 steps:
-  # Ensure Python 3.x is used
   - task: UsePythonVersion@0
     inputs:
       versionSpec: '3.x'
 
-  # Run your Python script
   - script: |
-      python add.py  # Ensure 'add.py' exists and is correct
+      python add.py
     displayName: 'Run Python Script'
